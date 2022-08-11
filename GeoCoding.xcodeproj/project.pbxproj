@@ -16,6 +16,9 @@
 		8C78085B28A53CD0003260F1 /* GeoCodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78085A28A53CD0003260F1 /* GeoCodingTests.swift */; };
 		8C78086528A53CD1003260F1 /* GeoCodingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78086428A53CD1003260F1 /* GeoCodingUITests.swift */; };
 		8C78086728A53CD1003260F1 /* GeoCodingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78086628A53CD1003260F1 /* GeoCodingUITestsLaunchTests.swift */; };
+		8C78087828A54734003260F1 /* ForwardGeocodingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78087728A54734003260F1 /* ForwardGeocodingViewController.swift */; };
+		8C78087A28A54758003260F1 /* ReverseGeocodingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78087928A54758003260F1 /* ReverseGeocodingViewController.swift */; };
+		8C78087C28A57AD5003260F1 /* CLPLacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78087B28A57AD5003260F1 /* CLPLacemark.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		8C78086028A53CD0003260F1 /* GeoCodingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeoCodingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C78086428A53CD1003260F1 /* GeoCodingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCodingUITests.swift; sourceTree = "<group>"; };
 		8C78086628A53CD1003260F1 /* GeoCodingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCodingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8C78087728A54734003260F1 /* ForwardGeocodingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardGeocodingViewController.swift; sourceTree = "<group>"; };
+		8C78087928A54758003260F1 /* ReverseGeocodingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeocodingViewController.swift; sourceTree = "<group>"; };
+		8C78087B28A57AD5003260F1 /* CLPLacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLPLacemark.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,9 @@
 				8C78084328A53CCF003260F1 /* AppDelegate.swift */,
 				8C78084528A53CCF003260F1 /* SceneDelegate.swift */,
 				8C78084728A53CCF003260F1 /* ViewController.swift */,
+				8C78087728A54734003260F1 /* ForwardGeocodingViewController.swift */,
+				8C78087928A54758003260F1 /* ReverseGeocodingViewController.swift */,
+				8C78087B28A57AD5003260F1 /* CLPLacemark.swift */,
 				8C78084928A53CCF003260F1 /* Main.storyboard */,
 				8C78084C28A53CD0003260F1 /* Assets.xcassets */,
 				8C78084E28A53CD0003260F1 /* LaunchScreen.storyboard */,
@@ -261,6 +270,9 @@
 				8C78084828A53CCF003260F1 /* ViewController.swift in Sources */,
 				8C78084428A53CCF003260F1 /* AppDelegate.swift in Sources */,
 				8C78084628A53CCF003260F1 /* SceneDelegate.swift in Sources */,
+				8C78087C28A57AD5003260F1 /* CLPLacemark.swift in Sources */,
+				8C78087828A54734003260F1 /* ForwardGeocodingViewController.swift in Sources */,
+				8C78087A28A54758003260F1 /* ReverseGeocodingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

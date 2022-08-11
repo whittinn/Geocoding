@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BackwardGeocodingViewController.swift
 //  GeoCoding
 //
 //  Created by Nathaniel Whittington on 8/11/22.
@@ -8,21 +8,48 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController {
-
+class ReverseGeocodingViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var latTextField: UITextField!
+    
+    @IBOutlet weak var locationLabelHide: UILabel!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var longTextField: UITextField!
+    var geoCoder = CLGeocoder()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getAddressFromLatLon(pdblLatitude: "29.749907", withLongitude: "-95.358421")
-        forwardGeocoding(address: "15633 Myrtle Avenue, Harvey, United States")
-    }
 
-    func getAddressFromLatLon(pdblLatitude: String, withLongitude pdblLongitude: String) {
-            var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
-            let lat: Double = Double("\(pdblLatitude)")!
-            //21.228124
-            let lon: Double = Double("\(pdblLongitude)")!
-            //72.833770
+        locationLabelHide.isHidden = true
+    }
+    
+   
+
+    @IBAction func searchButtonClicked(_ sender: UIButton) {
+        
+        
+        guard let latText = latTextField.text, let latString = Double(latText) else {return}
+        guard let longText = longTextField.text, let longString = Double(longText) else {return}
+        
+        
+        self.getAddressFromLatLon(pdblLatitude: latString, withLongitude: longString)
+        
+        // Update View
+        
+        searchButton.isHidden = true
+        activityIndicator.startAnimating()
+        dismissKeyboard()
+    }
+    
+    func getAddressFromLatLon(pdblLatitude: Double, withLongitude pdblLongitude: Double) {
+           
+        
+        
+        var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
+            let lat = pdblLatitude
+         
+            let lon = pdblLongitude
+   
             let ceo: CLGeocoder = CLGeocoder()
             center.latitude = lat
             center.longitude = lon
@@ -63,37 +90,13 @@ class ViewController: UIViewController {
                             addressString = addressString + pm.postalCode! + " "
                         }
 
-
-                        print(addressString)
+                        self.searchButton.isHidden = false
+                        self.activityIndicator.stopAnimating()
+                        self.locationLabelHide.isHidden = false
+                        self.locationLabel.text = addressString
                   }
             })
 
         }
     
-    
-    func forwardGeocoding(address: String) {
-            let geocoder = CLGeocoder()
-            geocoder.geocodeAddressString(address, completionHandler: { (placemarks, error) in
-                if error != nil {
-                    print("Failed to retrieve location")
-                    return
-                }
-                
-                var location: CLLocation?
-                
-                if let placemarks = placemarks, placemarks.count > 0 {
-                    location = placemarks.first?.location
-                }
-                
-                if let location = location {
-                    let coordinate = location.coordinate
-                    print("\nlat: \(coordinate.latitude), long: \(coordinate.longitude)")
-                }
-                else
-                {
-                    print("No Matching Location Found")
-                }
-            })
-        }
 }
-
